@@ -1,12 +1,12 @@
 import React from 'react'
+import { graphql } from 'gatsby'
+import Image from 'gatsby-image'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { animated, useSpring, config } from 'react-spring'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-import { graphql } from 'gatsby'
-import Image from 'gatsby-image'
-import { SEO, Container, Layout, Hero, BGImage } from '../components'
+import { SEO, Container, Layout, Hero, BGImage, Lightbox } from '../components'
 
 const Content = styled(Container)`
   ${tw`absolute py-8`};

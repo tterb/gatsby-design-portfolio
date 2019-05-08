@@ -11,6 +11,9 @@ const Wrapper = styled.div`
   }
   &.project-content {
     margin-bottom: 7rem;
+    h2 {
+      margin-top: 0;
+    }
   }
   ${props =>
     props.type === 'text' &&
@@ -30,8 +33,8 @@ const Wrapper = styled.div`
         }
       }
       .gatsby-image-wrapper {
-        width: 90%;
-        box-shadow: rgba(0,0,0,0.25) 0px 5px 10px 0px, rgba(0,0,0,0.08) 0px 5px 15px 0px;
+        width: 92.5%;
+        /* box-shadow: rgba(0,0,0,0.25) 0px 5px 10px 0px, rgba(0,0,0,0.08) 0px 5px 15px 0px; */
         margin: 2.5rem auto;
       }
     `};

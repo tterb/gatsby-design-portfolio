@@ -35,6 +35,9 @@ const reset = css`
     h5 {
       font-size: 1rem;
     }
+    h1, h2, h3 {
+      color: rgba(0,0,0,0.9);
+    }
     @media (max-width: ${theme.breakpoints.l}), (max-device-width: ${theme.breakpoints.l}) {
       font-size: 18px !important;
       h1 {

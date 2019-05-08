@@ -58,6 +58,7 @@ const Name = styled.div`
     &:hover,
     &:focus {
       color: ${props => props.theme.colors.body_color};
+      letter-spacing: 2px;
       text-decoration: none;
     }
   }
@@ -104,7 +105,6 @@ const Navigation = () => {
               <PageLink
                 key={nav.node.fields.slug}
                 to={nav.node.fields.slug}
-                direction='right'
                 activeClassName='nav-active'
               >
                 {nav.node.frontmatter.title}
@@ -112,8 +112,7 @@ const Navigation = () => {
             ))}
           </Nav>
           <Name>
-            <PageLink to='/' 
-              direction='bottom'
+            <PageLink to='/'
               data-testid='home-title-link'>
               {config.siteTitle}
             </PageLink>

@@ -38,15 +38,19 @@ const Content = styled.div`
       opacity: 1;
     }
   }
-  h2 {
-    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    line-height: 1.3;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
   p {
     color: rgba(255,255,255,0.8);
+    margin: 0.75rem 0 1.25rem;
   }
+`
+
+const Title = styled.h2`
+  color: rgba(255,255,255,0.95);
+  line-height: 1.3;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 `
 
 const ImageWrapper = styled.div`
@@ -84,6 +88,7 @@ const TracedGlow = styled.img`
 `
 
 const Category = styled.div`
+  font-weight: 500;
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   opacity: 0.9;
 `
@@ -97,7 +102,7 @@ const ProjectItem = ({ node, style, testid }) => (
       <Link to={node.fields.slug}>
         <TracedGlow src={node.frontmatter.cover.childImageSharp.fluid.tracedSVG} alt={node.frontmatter.title} />
         <Overlay style={{ backgroundColor: node.frontmatter.color }} />
-        <h2>{node.frontmatter.title}</h2>
+        <Title>{node.frontmatter.title}</Title>
         <p>{node.frontmatter.desc}</p>
         <Category>{node.frontmatter.category}</Category>
       </Link>

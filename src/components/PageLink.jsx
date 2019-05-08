@@ -4,13 +4,13 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const PageLink = ({ direction, duration, to, className, children }) => (
   <>
-    <AniLink cover hex='#23262b' className={className}
+    <AniLink cover bg='#23262b' className={className}
     to={to} direction={direction} duration={duration}>{ children }</AniLink>
   </>
 )
 
 PageLink.defaultProps = {
-  direction: 'left',
+  direction: 'bottom',
   duration: 1.15,
 }
 PageLink.propTypes = {
