@@ -1,17 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import theme from '../../config/theme'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const PageLink = ({ direction, duration, to, className, children }) => (
   <>
-    <AniLink cover bg='#23262b' className={className}
-    to={to} direction={direction} duration={duration}>{ children }</AniLink>
+    <AniLink cover to={to}
+      bg={theme.colors.light_grey} 
+      direction={direction}
+      duration={duration}
+      className={className} >
+      { children }
+    </AniLink>
   </>
 )
 
 PageLink.defaultProps = {
-  direction: 'bottom',
-  duration: 1.15,
+  direction: 'down',
+  duration: 1,
 }
 PageLink.propTypes = {
   duration: PropTypes.number,
