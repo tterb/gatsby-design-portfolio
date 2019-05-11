@@ -1,46 +1,39 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { FaGithub, FaDribbble, FaDeviantart } from 'react-icons/fa'
+import tw from 'tailwind.macro'
 import styled from 'styled-components'
 import config from '../../config/website'
 import PageLink from './PageLink.jsx'
 
 const Wrapper = styled.header`
-  display: flex;
-  position: relative;
-  align-items: center;
-  box-shadow: rgba(0,0,0,0.1) 0px 5px 15px 0px;
-  padding: 1rem 0 1rem 0;
-  z-index: 1000;
+  ${tw`flex relative items-center shadow-down px-0 py-4 z-999`};
+  background: rgba(255,255,255,0.2);
   a {
+    ${tw`no-underline z-99`};
     color: ${props => props.theme.colors.black};
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    z-index: 100;
+    transition: all 300ms ease-in-out;
     &:hover {
       color: ${props => props.theme.brand.primary};
     }
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
-    padding: 1rem 0 1rem 0;
-    flex-wrap: wrap;
+    ${tw`flex-wrap px-0 py-4`};
   }
 `
 
 const Nav = styled.nav`
-  display: flex;
-  flex: 1;
-  justify-content: flex-start;
+  ${tw`flex flex-1 justify-start font-title`};
   transition: all 350ms ease-in-out;
   padding: 0 ${props => props.theme.spacer.horizontal};
   a:not(:first-child) {
-    margin-left: 1rem;
+    ${tw`ml-4`};
   }
   a:hover {
-    letter-spacing: 0.5px;
+    ${tw`tracking-wide`};
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
-    padding: 0 1rem;
+    ${tw`px-4 py-0`};
   }
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     order: 2;
@@ -48,41 +41,40 @@ const Nav = styled.nav`
 `
 
 const Name = styled.div`
-  display: flex;
-  flex: 1;
-  justify-content: center;
+  ${tw`flex flex-1 justify-center`};
   a {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
+    ${tw`font-title text-xl font-bold`};
     &:hover,
     &:focus {
-      color: #000;
-      letter-spacing: 2px;
-      text-decoration: none;
+      ${tw`text-black no-underline`};
+    }
+    &:hover {
+      ${tw`tracking-wider`};
     }
   }
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    order: 1;
     flex: 1 0 100%;
+    order: 1;
     margin-bottom: 0.75rem;
   }
 `
 
 const SocialMedia = styled.div`
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
+  ${tw`flex flex-1 justify-end`};
   padding: 0 ${props => props.theme.spacer.horizontal};
   a {
-    font-size: 1.25rem;
+    ${tw`relative text-2xl`};
     line-height: 20px;
+    &:last-child {
+      font-size: 1.35rem;
+      top: 2px;
+    }
   }
   a:not(:first-child) {
-    margin-left: 1rem;
+    ${tw`ml-4`};
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
-    padding: 0 1rem;
+    ${tw`px-4 py-0`};
   }
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     order: 3;
@@ -91,48 +83,42 @@ const SocialMedia = styled.div`
 
 // Grabs all MDX files from src/pages and puts them into the navigation
 
-const Navigation = () => {
-  let dribbble = config.dribbble
-  let github = config.github
-  let deviantart = config.deviantart
-  return(
-    <StaticQuery
-      query={query}
-      render={data => (
-        <Wrapper data-testid='navigation'>
-          <Nav>
-            {data.nav.edges.map((nav, index) => (
-              <PageLink
-                key={nav.node.fields.slug}
-                to={nav.node.fields.slug}
-                activeClassName='nav-active'
-              >
-                {nav.node.frontmatter.title}
-              </PageLink>
-            ))}
-          </Nav>
-          <Name>
-            <PageLink to='/'
-              data-testid='home-title-link'>
-              {config.siteTitle}
+const Navigation = () => (
+  <StaticQuery
+    query={query}
+    render={data => (
+      <Wrapper data-testid='navigation'>
+        <Nav>
+          {data.nav.edges.map((nav, index) => (
+            <PageLink
+              key={nav.node.fields.slug}
+              to={nav.node.fields.slug}
+              direction='down'
+            >
+              {nav.node.frontmatter.title}
             </PageLink>
-          </Name>
-          <SocialMedia>
-            <a href={`https://www.dribbble.com/`+dribbble} target='_blank' rel='noopener noreferrer' aria-label='Dribbble'>
-              <FaDribbble />
-            </a>
-            <a href={`https://www.github.com/`+github} target='_blank' rel='noopener noreferrer' aria-label='GitHub'>
-              <FaGithub />
-            </a>
-            <a href={`https://www.deviantart.com/`+deviantart} target='_blank' rel='noopener noreferrer' aria-label='DeviantArt'>
-              <FaDeviantart />
-            </a>
-          </SocialMedia>
-        </Wrapper>
-      )}
-    />
-  )
-}
+          ))}
+        </Nav>
+        <Name>
+          <PageLink to='/' direction='up'>
+            {config.siteTitle}
+          </PageLink>
+        </Name>
+        <SocialMedia>
+          <a href={`https://www.dribbble.com/`+config.dribbble} target='_blank' rel='noopener noreferrer' aria-label='Dribbble'>
+            <FaDribbble />
+          </a>
+          <a href={`https://www.github.com/`+config.github} target='_blank' rel='noopener noreferrer' aria-label='GitHub'>
+            <FaGithub />
+          </a>
+          <a href={`https://www.deviantart.com/`+config.deviantart} target='_blank' rel='noopener noreferrer' aria-label='DeviantArt'>
+            <FaDeviantart />
+          </a>
+        </SocialMedia>
+      </Wrapper>
+    )}
+  />
+)
 
 export default Navigation
 
