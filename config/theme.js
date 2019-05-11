@@ -6,8 +6,9 @@ const brand = {
 }
 
 const colors = {
-  grey: '#9BABB4',
   black: '#000',
+  grey: '#687880',
+  light_grey: '#E4E6E9',
   white: '#fff',
   bg_color: '#f3f3f3',
   body_color: 'rgba(0,0,0,0.75)',
