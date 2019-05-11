@@ -4,19 +4,16 @@ import Image from 'gatsby-image'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { darken } from 'polished'
 import tw from 'tailwind.macro'
 import { animated, useSpring, config } from 'react-spring'
 import { SEO, Container, Layout, Hero, BGImage, Lightbox } from '../components'
 
 const Content = styled(Container)`
-  ${tw`absolute py-8`};
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
+  ${tw`absolute pin-l pin-r pin-b py-8 z-3`};
 `
 
-const InformationWrapper = styled(animated.div)`
+const InfoWrapper = styled(animated.div)`
   ${tw`flex flex-row flex-wrap justify-start`};
 `
 
@@ -31,14 +28,22 @@ const InfoBlock = styled.div`
     color: ${props => (props.customcolor ? props.customcolor : props.theme.colors.grey)};
   }
   div:last-child {
-    font-size: 1rem;
-    padding-left: 0.25rem;
+    ${tw`text-base pl-1`};
+  }
+`
+
+const ProjectBody = styled(animated.div)`
+  a {
+    color: ${props => (props.customcolor ? props.customcolor : props.theme.colors.primary)};
+    text-decoration: none;
+    &:hover {
+      color: ${props => (props.customcolor ? darken(0.15, props.customcolor) : darken(0.15, props.theme.colors.primary))};
+    }
   }
 `
 
 const Project = ({ data: { mdx: postNode }, location }) => {
   const project = postNode.frontmatter
-
   const titleProps = useSpring({
     config: config.slow,
     from: { opacity: 0, transform: 'translate3d(0, -30px, 0)' },
@@ -52,19 +57,18 @@ const Project = ({ data: { mdx: postNode }, location }) => {
       <SEO pathname={location.pathname} postNode={postNode} article />
       <Hero>
         <BGImage customcolor={project.color}>
-          <Image fluid={project.cover.childImageSharp.fluid} alt="" />
+          <Image fluid={project.cover.childImageSharp.fluid} alt={project.title} />
         </BGImage>
         <Content type="text">
           <Title data-testid="project-title" style={titleProps}>
             {project.title}
           </Title>
-          <InformationWrapper style={infoProps}>
+          <InfoWrapper style={infoProps}>
             { project.client ?
-                  <InfoBlock customcolor={project.color}>
-                    <div>Client</div>
-                    <div>{project.client}</div>
-                  </InfoBlock>
-                : ""
+              <InfoBlock customcolor={project.color}>
+                <div>Client</div>
+                <div>{project.client}</div>
+              </InfoBlock> : ""
             }
             <InfoBlock customcolor={project.color}>
               <div>Category</div>
@@ -78,17 +82,17 @@ const Project = ({ data: { mdx: postNode }, location }) => {
               <div>Tools</div>
               <div>{project.tools}</div>
             </InfoBlock>
-          </InformationWrapper>
+          </InfoWrapper>
         </Content>
       </Hero>
       <Container type="text" className="project-content">
-        <animated.div style={contentProps}>
+        <ProjectBody style={contentProps} customcolor={project.color}>
           <MDXRenderer>{postNode.code.body}</MDXRenderer>
           {project.image ?
             <Image fluid={project.image.childImageSharp.fluid} alt={project.title} /> :
             <Image fluid={project.cover.childImageSharp.fluid} alt={project.title} />
           }
-        </animated.div>
+        </ProjectBody>
       </Container>
     </Layout>
   )
@@ -121,7 +125,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        date(formatString: "DD.MM.YYYY")
+        date(formatString: "MM.DD.YYYY")
         desc
         color
         category

@@ -9,17 +9,12 @@ import Image from 'gatsby-image'
 import { SEO, Container, Layout, Hero, BGImage } from '../components'
 
 const Content = styled(Container)`
-  ${tw`absolute pt-8 pb-8`};
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
+  ${tw`absolute pin-l pin-r pin-b mx-auto pt-8 pb-8 z-3`};
+  width: 95%;
 `
 
 const Title = styled(animated.h1)`
-  ${tw`mt-16 mb-0`};
-  font-size: 5.074rem;
-  line-height: 1.1;
+  ${tw`text-6xl leading-tighter mt-16 mb-0`};
 `
 
 const Single = ({ data: { mdx }, location }) => {
