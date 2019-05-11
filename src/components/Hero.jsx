@@ -1,11 +1,10 @@
 import styled from 'styled-components'
+import tw from 'tailwind.macro'
 
 const Hero = styled.section`
-  position: relative;
+  ${tw`relative -mt-16 overflow-hidden`}
   height: ${props => (props.single ? '28vw' : '40vw')};
-  margin-top: -4rem;
   margin-bottom: ${props => (props.single ? '0' : '1rem')};
-  overflow: hidden;
   @media (max-width: ${props => props.theme.breakpoints.m}), (max-device-width: ${props => props.theme.breakpoints.m}) {
     ${props => (props.single ? '40vw' : '60vw')};
   }

@@ -7,7 +7,7 @@ import tw from 'tailwind.macro'
 import Image from 'gatsby-image'
 
 const Item = styled(animated.div)`
-  position: relative;
+  ${tw`relative`};
   &:before {
     display: block;
     content: '';
@@ -16,50 +16,30 @@ const Item = styled(animated.div)`
 `
 
 const Content = styled.div`
-  ${tw`absolute w-full h-full`};
-  top: 0;
-  left: 0;
+  ${tw`absolute w-full h-full pin-t pin-l`};
   a {
-    ${tw`absolute w-full h-full p-6`};
-    /* position: absolute; */
-    color: #fff;
-    text-decoration: none;
-    /* width: 100%; */
-    /* height: 100%; */
-    top: 0;
-    left: 0;
-    opacity: 0;
+    ${tw`absolute text-white no-underline w-full h-full pin-t pin-l p-6 opacity-0 z-10`};
     transition: all 300ms ease-in-out;
-    /* padding: 2rem; */
-    z-index: 10;
     &:hover {
-      color: #fff;
-      text-decoration: none;
-      opacity: 1;
+      ${tw`text-white no-underline opacity-100`};
     }
   }
   p {
+    ${tw`mx-0 mt-3 mb-5`};
     color: rgba(255,255,255,0.8);
-    margin: 0.75rem 0 1.25rem;
   }
 `
 
 const Title = styled.h2`
+  ${tw`leading-tight mt-0 mb-2`};
   color: rgba(255,255,255,0.95);
-  line-height: 1.3;
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-  line-height: 1.3;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
 `
 
 const ImageWrapper = styled.div`
   > div {
+    ${tw`absolute w-full h-full pin-t pin-l`};
     position: absolute !important;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
     > div {
       position: static !important;
     }
@@ -67,20 +47,13 @@ const ImageWrapper = styled.div`
 `
 
 const Overlay = styled.div`
-  ${tw`absolute w-full h-full`};
+  ${tw`absolute w-full h-full pin-t pin-l`};
   background-color: ${props => props.theme.brand.primary};
-  top: 0;
-  left: 0;
-  /* opacity: 0.75; */
   z-index: -2;
 `
 
 const TracedGlow = styled.img`
-  ${tw`absolute w-full h-full object-cover`};
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  ${tw`absolute w-full h-full pin`};
   opacity: 0.1;
   object-fit: cover;
   filter: invert(100%);
@@ -88,9 +61,8 @@ const TracedGlow = styled.img`
 `
 
 const Category = styled.div`
-  font-weight: 500;
+  ${tw`font-medium opacity-90`};
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-  opacity: 0.9;
 `
 
 const ProjectItem = ({ node, style, testid }) => (

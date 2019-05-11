@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import tw from 'tailwind.macro'
 
 const Wrapper = styled.div`
+  ${tw`mx-auto my-0`};
+  width: 95%;
   max-width: ${props => props.theme.container[props.type]};
   padding: 0 ${props => props.theme.spacer.horizontal};
-  margin: 0 auto;
   &.page-content {
     margin-bottom: 10rem;
   }
@@ -34,7 +36,6 @@ const Wrapper = styled.div`
       }
       .gatsby-image-wrapper {
         width: 92.5%;
-        /* box-shadow: rgba(0,0,0,0.25) 0px 5px 10px 0px, rgba(0,0,0,0.08) 0px 5px 15px 0px; */
         margin: 2.5rem auto;
       }
     `};

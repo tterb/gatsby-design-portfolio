@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import tw from 'tailwind.macro'
 import { rgba } from 'polished'
 
 const shade = `rgba(255, 255, 255, 0.4)`
@@ -7,7 +8,7 @@ const shade = `rgba(255, 255, 255, 0.4)`
 // the single/project templates have different headers
 
 const BGImage = styled.div`
-  width: 100%;
+  ${tw`w-full`}
   .gatsby-image-wrapper {
     position: static !important;
     filter: grayscale(100%);
@@ -31,25 +32,16 @@ const BGImage = styled.div`
     props.customcolor &&
     css`
       &:before {
-        position: absolute;
+        ${tw`absolute w-full h-full pin-t pin-l z-2`}
         background: ${`linear-gradient(to top, rgba(0, 0, 0, 0) 0%, ${rgba(props.customcolor, 1)} 100%)`};
         content: '';
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
         mix-blend-mode: overlay;
-        z-index: 2;
       }
     `}
   &:after {
-    position: absolute;
+    ${tw`absolute w-full h-full pin-t pin-l z-2`}
     background: ${({ theme }) => `linear-gradient(to bottom, ${shade} 0%, ${theme.colors.bg_color} 100%), linear-gradient(to right, ${shade} 50%, ${theme.colors.bg_color} 100%)`};
     content: '';
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
     backface-visibility: hidden;
   }
 `

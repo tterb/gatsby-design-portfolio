@@ -84,7 +84,7 @@ const reset = css`
   }
   a {
     color: ${theme.colors.link_color};
-    text-decoration: none;
+    text-decoration: none !important;
     transition: all 300ms ease-in-out;
     &:hover,
     &:focus {
