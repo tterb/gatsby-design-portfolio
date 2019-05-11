@@ -57,7 +57,7 @@ const Name = styled.div`
     font-weight: 700;
     &:hover,
     &:focus {
-      color: ${props => props.theme.colors.body_color};
+      color: #000;
       letter-spacing: 2px;
       text-decoration: none;
     }
