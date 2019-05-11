@@ -53,7 +53,7 @@ const colors = {
   'grey-darkest': '#273238',
   'grey-darker': '#364349',
   'grey-dark': '#70818A',
-  grey: '#9BABB4',
+  grey: '#687880',
   'grey-light': '#DAE4E9',
   'grey-lighter': '#F3F7F9',
   'grey-lightest': '#FAFCFC',
@@ -258,23 +258,17 @@ module.exports = {
 
   fonts: {
     sans: [
-      'Titillium Web',
-      'Product Sans',
+      'Roboto',
       '-apple-system',
       'BlinkMacSystemFont',
       'Segoe UI',
-      'Roboto',
-      'Oxygen',
-      'Ubuntu',
-      'Cantarell',
-      'Fira Sans',
+      'Poppins',
       'Droid Sans',
       'Helvetica Neue',
       'sans-serif',
     ],
     title: [
-      'Product Sans',
-      'Titillium Web',
+      'Poppins',
       '-apple-system',
       'BlinkMacSystemFont',
       'Segoe UI',
@@ -327,7 +321,7 @@ module.exports = {
     '3xl': '1.875rem', // 30px
     '4xl': '2.25rem', // 36px
     '5xl': '4rem',
-    '6xl': '5.5rem',
+    '6xl': '5.074rem',
     '7xl': '6.5rem',
     '8xl': '8rem',
     '9xl': '9rem',
@@ -374,7 +368,8 @@ module.exports = {
 
   leading: {
     none: 1,
-    tight: 1.25,
+    tighter: 1.1,
+    tight: 1.3,
     normal: 1.5,
     loose: 2,
   },
@@ -392,9 +387,10 @@ module.exports = {
   */
 
   tracking: {
-    tight: '-0.05em',
+    tight: '-0.5px',
     normal: '0',
-    wide: '0.05em',
+    wide: '0.5px',
+    wider: '1.5px',
   },
 
   /*
@@ -691,9 +687,13 @@ module.exports = {
     '2': '0.5rem',
     '3': '0.75rem',
     '4': '1rem',
+    '5': '1.25rem',
     '6': '1.5rem',
+    '7': '1.75rem',
     '8': '2rem',
+    '9': '2.25rem',
     '10': '2.5rem',
+    '11': '2.75rem',
     '12': '3rem',
     '16': '4rem',
     '24': '6rem',
@@ -723,13 +723,17 @@ module.exports = {
     '2': '0.5rem',
     '3': '0.75rem',
     '4': '1rem',
+    '5': '1.25rem',
     '6': '1.5rem',
+    '7': '1.75rem',
     '8': '2rem',
+    '9': '2.25rem',
     '10': '2.5rem',
+    '11': '2.75rem',
     '12': '3rem',
-    '14': '3.5rem',
     '16': '4rem',
-    '18': '4.5rem',
+    '24': '6rem',
+    '32': '8rem',
   },
 
   /*
@@ -754,8 +758,17 @@ module.exports = {
     '2': '0.5rem',
     '3': '0.75rem',
     '4': '1rem',
+    '5': '1.25rem',
     '6': '1.5rem',
+    '7': '1.75rem',
     '8': '2rem',
+    '9': '2.25rem',
+    '10': '2.5rem',
+    '11': '2.75rem',
+    '12': '3rem',
+    '16': '4rem',
+    '24': '6rem',
+    '32': '8rem',
   },
 
   /*
@@ -776,10 +789,12 @@ module.exports = {
 
   shadows: {
     default: '0 2px 4px 0 rgba(0,0,0,0.10)',
-    md: '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
-    lg: '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
-    inner: 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
-    none: 'none',
+    md:     '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
+    lg:     '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
+    inner:  'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
+    down:   '0px 5px 15px 0px rgba(0,0,0,0.1)',
+    up:     '0px -4px 20px 0px rgba(0,0,0,0.065)',
+    none:   'none',
   },
 
   /*
@@ -797,12 +812,17 @@ module.exports = {
 
   zIndex: {
     auto: 'auto',
-    '0': 0,
+    '0':   0,
+    '2':   2,
+    '3':   3,
     '10': 10,
     '20': 20,
     '30': 30,
     '40': 40,
     '50': 50,
+    '99': 99,
+    '999': 999,
+    '9999': 9999,
   },
 
   /*
@@ -819,11 +839,12 @@ module.exports = {
   */
 
   opacity: {
-    '0': '0',
+    '0':    '0',
     '25': '.25',
-    '50': '.5',
+    '50':  '.5',
     '75': '.75',
-    '100': '1',
+    '90':  '.9',
+    '100':  '1',
   },
 
   /*
