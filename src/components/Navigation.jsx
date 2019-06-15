@@ -29,8 +29,19 @@ const Nav = styled.nav`
   a:not(:first-child) {
     ${tw`ml-4`};
   }
-  a:hover {
-    ${tw`tracking-wide`};
+  a {
+    &.external::after {
+      content: '*';
+      color: #000;
+      opacity: 0;
+      transition: all 350ms ease-in-out;
+    }
+    &:hover {
+      ${tw`tracking-wide`};
+      &.external::after { 
+        opacity: 0.35;
+      }
+    }
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     ${tw`px-4 py-0`};
@@ -98,6 +109,7 @@ const Navigation = () => (
               {nav.node.frontmatter.title}
             </PageLink>
           ))}
+          <a href='https://tterb-gatsby.netlify.com' className='external' target='_blank'>Code</a>
         </Nav>
         <Name>
           <PageLink to='/' direction='up'>
@@ -105,11 +117,11 @@ const Navigation = () => (
           </PageLink>
         </Name>
         <SocialMedia>
-          <a href={`https://www.dribbble.com/`+config.dribbble} target='_blank' rel='noopener noreferrer' aria-label='Dribbble'>
-            <FaDribbble />
-          </a>
           <a href={`https://www.github.com/`+config.github} target='_blank' rel='noopener noreferrer' aria-label='GitHub'>
             <FaGithub />
+          </a>
+          <a href={`https://www.dribbble.com/`+config.dribbble} target='_blank' rel='noopener noreferrer' aria-label='Dribbble'>
+            <FaDribbble />
           </a>
           <a href={`https://www.deviantart.com/`+config.deviantart} target='_blank' rel='noopener noreferrer' aria-label='DeviantArt'>
             <FaDeviantart />

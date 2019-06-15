@@ -10,8 +10,8 @@ module.exports = {
   siteDescription: 'A place to showcase my designs',
   author: 'Brett Stevenson', // Author for schema.org JSONLD
   
-  dribble: 'tterb',
   github: 'tterb',
+  dribble: 'tterb',
   deviantart: 'bstevenson',
   
   // siteFBAppID: '123456789', // Facebook App ID - Optional
