@@ -9,9 +9,10 @@ import PageLink from './PageLink.jsx'
 const Wrapper = styled.header`
   ${tw`flex relative items-center shadow-down px-0 py-4 z-999`};
   background: rgba(255,255,255,0.2);
+  color: rgba(0,0,0,0.6);
   a {
     ${tw`no-underline z-99`};
-    color: ${props => props.theme.colors.black};
+    color: rgba(0,0,0,0.7);
     transition: all 300ms ease-in-out;
     &:hover {
       color: ${props => props.theme.brand.primary};
@@ -52,9 +53,11 @@ const Nav = styled.nav`
 `
 
 const Name = styled.div`
-  ${tw`flex flex-1 justify-center`};
+  ${tw`flex flex-1 justify-center text-center`};
   a {
     ${tw`font-title text-xl font-bold`};
+    color: rgba(0,0,0,0.8);
+    line-height: 1.35;
     &:hover,
     &:focus {
       ${tw`text-black no-underline`};
