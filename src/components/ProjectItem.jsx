@@ -18,15 +18,18 @@ const Item = styled(animated.div)`
 const Content = styled.div`
   ${tw`absolute w-full h-full pin-t pin-l`};
   a {
-    ${tw`absolute text-white no-underline w-full h-full pin-t pin-l p-6 opacity-0 z-10`};
+    ${tw`absolute text-white no-underline w-full h-full pin-t pin-l xs:px-10 xs:py-11 md:p-6 opacity-0 z-10`};
     transition: all 300ms ease-in-out;
     &:hover {
       ${tw`text-white no-underline opacity-100`};
     }
   }
   p {
-    ${tw`mx-0 mt-3 mb-5`};
+    ${tw`leading-normal mx-0 xs:mt-5 xs:mb-6 md:mt-3 md:mb-5`};
     color: rgba(255,255,255,0.8);
+    @media screen and (max-width: 420px) {
+      font-size: 1.5rem;
+    }
   }
 `
 
@@ -34,6 +37,9 @@ const Title = styled.h2`
   ${tw`leading-tight mt-0 mb-2`};
   color: rgba(255,255,255,0.95);
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  @media screen and (max-width: 420px) {
+    font-size: 3rem;
+  }
 `
 
 const ImageWrapper = styled.div`
@@ -63,6 +69,9 @@ const TracedGlow = styled.img`
 const Category = styled.div`
   ${tw`font-medium opacity-90`};
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  @media screen and (max-width: 420px) {
+    font-size: 1.65rem;
+  }
 `
 
 const ProjectItem = ({ node, style, testid }) => (
