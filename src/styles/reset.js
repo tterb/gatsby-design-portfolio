@@ -205,6 +205,15 @@ const reset = css`
   [hidden] {
     display: none !important;
   }
+  
+  .project-content {
+    h2 {
+      margin-block-end: 0.65rem;
+    }
+    p {
+      margin-block-end: 0.5rem;
+    }
+  }
 `
 
 export default reset

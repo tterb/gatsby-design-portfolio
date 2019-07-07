@@ -14,11 +14,12 @@ const Content = styled(Container)`
 `
 
 const InfoWrapper = styled(animated.div)`
-  ${tw`flex flex-row flex-wrap justify-start`};
+  ${tw`flex flex-row flex-wrap justify-start m-auto`};
+  width: 95%;
 `
 
 const Title = styled(animated.h1)`
-  ${tw`mt-0`};
+  ${tw`my-0`};
 `
 
 const InfoBlock = styled.div`
@@ -28,14 +29,17 @@ const InfoBlock = styled.div`
     color: ${props => (props.customcolor ? props.customcolor : props.theme.colors.grey)};
   }
   div:last-child {
-    ${tw`text-base pl-1`};
+    ${tw`text-base pl-0`};
+    color: rgba(0,0,0,0.55);
   }
 `
 
 const ProjectBody = styled(animated.div)`
+  ${tw`m-auto`}
+  width: 95%;
   a {
+    ${tw`no-underline`}
     color: ${props => (props.customcolor ? props.customcolor : props.theme.colors.primary)};
-    text-decoration: none;
     &:hover {
       color: ${props => (props.customcolor ? darken(0.15, props.customcolor) : darken(0.15, props.theme.colors.primary))};
     }

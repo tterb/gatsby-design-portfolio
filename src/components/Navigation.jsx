@@ -58,6 +58,7 @@ const Name = styled.div`
     ${tw`font-title text-xl font-bold`};
     color: rgba(0,0,0,0.8);
     line-height: 1.35;
+    transition: all 400ms ease-in-out 200ms;
     &:hover,
     &:focus {
       ${tw`text-black no-underline`};
