@@ -75,6 +75,13 @@ export const pageQuery = graphql`
                 }
               }
             }
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 720, quality: 90, traceSVG: { color: "#f3f3f3" }) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
           }
         }
       }
