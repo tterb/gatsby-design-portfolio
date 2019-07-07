@@ -60,7 +60,7 @@ const Overlay = styled.div`
 
 const TracedGlow = styled.img`
   ${tw`absolute w-full h-full pin`};
-  opacity: 0.1;
+  opacity: 0.15;
   object-fit: cover;
   filter: invert(100%);
   z-index: -1;
@@ -78,10 +78,10 @@ const ProjectItem = ({ node, style, testid }) => (
   <Item key={node.fields.slug} style={style} data-testid={testid}>
     <Content>
       <ImageWrapper>
-        <Image fluid={node.frontmatter.cover.childImageSharp.fluid} />
+        <Image fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
       </ImageWrapper>
       <Link to={node.fields.slug}>
-        <TracedGlow src={node.frontmatter.cover.childImageSharp.fluid.tracedSVG} alt={node.frontmatter.title} />
+        <TracedGlow src={node.frontmatter.thumbnail.childImageSharp.fluid.tracedSVG} alt={node.frontmatter.title} />
         <Overlay style={{ backgroundColor: node.frontmatter.color }} />
         <Title>{node.frontmatter.title}</Title>
         <p>{node.frontmatter.desc}</p>
