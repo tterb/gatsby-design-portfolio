@@ -230,9 +230,9 @@ module.exports = {
   */
 
   screens: {
-    xs: '250px',
-    sm: '400px',
-    md: '600px',
+    xs: '375px',
+    sm: '500px',
+    md: '650px',
     lg: '900px',
     xl: '1200px',
     xxl: '1600px',
@@ -319,9 +319,9 @@ module.exports = {
     xl: '1.25rem', // 20px
     '2xl': '1.5rem', // 24px
     '3xl': '1.875rem', // 30px
-    '4xl': '2.25rem', // 36px
-    '5xl': '4rem',
-    '6xl': '5.074rem',
+    '4xl': '2.25rem',
+    '5xl': '3.5rem',
+    '6xl': '5rem',
     '7xl': '6.5rem',
     '8xl': '8rem',
     '9xl': '9rem',
@@ -387,10 +387,11 @@ module.exports = {
   */
 
   tracking: {
-    tight: '-0.5px',
-    normal: '0',
-    wide: '0.5px',
-    wider: '1.5px',
+    tighter:   '-1px',
+    tight:   '-0.5px',
+    normal:       '0',
+    wide:     '0.5px',
+    wider:    '1.5px',
   },
 
   /*
@@ -753,23 +754,24 @@ module.exports = {
   */
 
   negativeMargin: {
-    px: '1px',
-    '0': '0',
-    '1': '0.25rem',
-    '2': '0.5rem',
-    '3': '0.75rem',
-    '4': '1rem',
-    '5': '1.25rem',
-    '6': '1.5rem',
-    '7': '1.75rem',
-    '8': '2rem',
-    '9': '2.25rem',
-    '10': '2.5rem',
+    px:       '1px',
+    '0':           '0',
+    '1':  '0.25rem',
+    '2':   '0.5rem',
+    '3':  '0.75rem',
+    '4':     '1rem',
+    '5':  '1.25rem',
+    '6':   '1.5rem',
+    '7':  '1.75rem',
+    '8':     '2rem',
+    '9':  '2.25rem',
+    '10':  '2.5rem',
     '11': '2.75rem',
-    '12': '3rem',
-    '16': '4rem',
-    '24': '6rem',
-    '32': '8rem',
+    '12':    '3rem',
+    '14':  '3.5rem',
+    '16':    '4rem',
+    '24':    '6rem',
+    '32':    '8rem',
   },
 
   /*
