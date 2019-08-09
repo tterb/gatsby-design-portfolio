@@ -7,7 +7,8 @@ import styled from 'styled-components'
 import { darken } from 'polished'
 import tw from 'tailwind.macro'
 import { animated, useSpring, config } from 'react-spring'
-import { SEO, Container, Layout, Hero, BGImage, Lightbox } from '../components'
+import { BGImage, Container, Layout, Lightbox, SEO } from '../components'
+import ProjectHero from '../components/ProjectHero'
 
 const Content = styled(Container)`
   ${tw`absolute pin-l pin-r pin-b py-8 z-3`};
@@ -19,7 +20,10 @@ const InfoWrapper = styled(animated.div)`
 `
 
 const Title = styled(animated.h1)`
-  ${tw`my-0`};
+  ${tw`text-5xl my-0`};
+  @media screen and (max-width: 560px) {
+    font-size: 3rem;
+  }
 `
 
 const InfoBlock = styled.div`
@@ -30,7 +34,7 @@ const InfoBlock = styled.div`
   }
   div:last-child {
     ${tw`text-base pl-0`};
-    color: rgba(0,0,0,0.55);
+    color: rgba(0,0,0,0.7);
   }
 `
 
@@ -59,7 +63,7 @@ const Project = ({ data: { mdx: postNode }, location }) => {
   return (
     <Layout pathname={location.pathname} customSEO>
       <SEO pathname={location.pathname} postNode={postNode} article />
-      <Hero>
+      <ProjectHero>
         <BGImage customcolor={project.color}>
           <Image fluid={project.cover.childImageSharp.fluid} alt={project.title} />
         </BGImage>
@@ -88,7 +92,7 @@ const Project = ({ data: { mdx: postNode }, location }) => {
             </InfoBlock>
           </InfoWrapper>
         </Content>
-      </Hero>
+      </ProjectHero>
       <Container type="text" className="project-content">
         <ProjectBody style={contentProps} customcolor={project.color}>
           <MDXRenderer>{postNode.code.body}</MDXRenderer>

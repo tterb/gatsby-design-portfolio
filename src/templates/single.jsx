@@ -6,7 +6,8 @@ import { animated, useSpring, config } from 'react-spring'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import { SEO, Container, Layout, Hero, BGImage } from '../components'
+import { SEO, Container, Layout, BGImage } from '../components'
+import ProjectHero from '../components/ProjectHero'
 
 const Content = styled(Container)`
   ${tw`absolute pin-l pin-r pin-b mx-auto pt-8 pb-8 z-3`};
@@ -30,7 +31,7 @@ const Single = ({ data: { mdx }, location }) => {
   return (
     <Layout pathname={location.pathname} customSEO>
       <SEO pathname={location.pathname} postNode={mdx} single />
-      <Hero single>
+      <ProjectHero single>
         <BGImage single>
           <Image fluid={single.cover.childImageSharp.fluid} alt="" />
         </BGImage>
@@ -39,7 +40,7 @@ const Single = ({ data: { mdx }, location }) => {
             {single.title}
           </Title>
         </Content>
-      </Hero>
+      </ProjectHero>
       <Container type="text" className="page-content">
         <animated.div style={contentProps}>
           <MDXRenderer>{mdx.code.body}</MDXRenderer>
