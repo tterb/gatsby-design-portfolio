@@ -4,12 +4,12 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import { useTrail } from 'react-spring'
 import styled from 'styled-components'
-import { Layout, ProjectItem } from '../components'
+import { Hero, Layout, ProjectItem } from '../components'
 
 const ListWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  background: #F7F6FA;
+  background: #F6F8FA;
   width: 100%;
 `
 
@@ -26,6 +26,7 @@ const Index = ({
 
   return (
     <Layout pathname={location.pathname}>
+    <Hero />
       <ListWrapper>
         {trail.map((style, index) => (
           <ProjectItem
