@@ -7,7 +7,7 @@ import config from '../../config/website'
 import PageLink from './PageLink.jsx'
 
 const Wrapper = styled.header`
-  ${tw`flex relative items-center shadow-down px-0 py-4 z-999`};
+  ${tw`flex relative items-center px-0 py-4 z-999`};
   background: rgba(255,255,255,0.2);
   color: rgba(0,0,0,0.6);
   a {
@@ -58,6 +58,7 @@ const Name = styled.div`
     ${tw`font-title text-xl font-bold`};
     color: rgba(0,0,0,0.8);
     line-height: 1.35;
+    width: max-content;
     transition: all 400ms ease-in-out 200ms;
     &:hover,
     &:focus {
@@ -98,7 +99,7 @@ const SocialMedia = styled.div`
 
 // Grabs all MDX files from src/pages and puts them into the navigation
 
-const Navigation = () => (
+const Navigation = ({ path }) => (
   <StaticQuery
     query={query}
     render={data => (
@@ -113,21 +114,22 @@ const Navigation = () => (
               {nav.node.frontmatter.title}
             </PageLink>
           ))}
-          <a href='https://tterb-gatsby.netlify.com' className='external' target='_blank'>Code</a>
+          <a href={config.devUrl} className='external' target='_blank'>Code</a>
         </Nav>
-        <Name>
-          <PageLink to='/' direction='up'>
-            {config.siteTitle}
-          </PageLink>
-        </Name>
+        { path !== '/' ?
+          <Name>
+            <PageLink to='/' direction='up'>
+              {config.siteTitle}
+            </PageLink>
+          </Name> : null }
         <SocialMedia>
-          <a href={`https://www.github.com/`+config.github} target='_blank' rel='noopener noreferrer' aria-label='GitHub'>
+          <a href={config.github} target='_blank' rel='noopener noreferrer' aria-label='GitHub'>
             <FaGithub />
           </a>
-          <a href={`https://www.dribbble.com/`+config.dribbble} target='_blank' rel='noopener noreferrer' aria-label='Dribbble'>
+          <a href={config.dribbble} target='_blank' rel='noopener noreferrer' aria-label='Dribbble'>
             <FaDribbble />
           </a>
-          <a href={`https://www.deviantart.com/`+config.deviantart} target='_blank' rel='noopener noreferrer' aria-label='DeviantArt'>
+          <a href={config.deviantart} target='_blank' rel='noopener noreferrer' aria-label='DeviantArt'>
             <FaDeviantart />
           </a>
         </SocialMedia>
