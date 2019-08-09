@@ -1,24 +1,51 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import { animated, useSpring, useTrail, config } from 'react-spring'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
-const Hero = styled.section`
-  ${tw`relative xs:mt-0 md:-mt-16 overflow-hidden`}
-  height: ${props => (props.single ? '28vw' : '40vw')};
-  margin-bottom: ${props => (props.single ? '0' : '1rem')};
-  @media (max-width: ${props => props.theme.breakpoints.m}), (max-device-width: ${props => props.theme.breakpoints.m}) {
-    ${props => (props.single ? '40vw' : '60vw')};
+const Wrapper = styled.div`
+  ${tw`flex flex-col w-full tracking-tight justify-end self-start shadow-down -mt-14 px-9 py-16 z-999`}
+  height: 55vh;
+  @media (max-width: 500px) {
+    height: 50vh;
   }
-  @media (max-width: ${props => props.theme.breakpoints.s}), (max-device-width: ${props => props.theme.breakpoints.s}) {
-    ${props => (props.single ? '300px' : '400px')};
-  }
-  @media (max-width: ${props => props.theme.breakpoints.xs}),
-    (max-device-width: ${props => props.theme.breakpoints.xs}) {
-    height: 400px;
-    margin-top: -7rem;
-  }
-  @media screen and (max-width: 420px) {
-    height: 40vw;
+  span {
+    color: rgba(70,100,150,0.5);
   }
 `
+
+const PageTitle = styled(animated.h1)`
+  ${tw`text-4xl md:text-5xl font-normal tracking-tighter leading-tighter mt-4 mb-2`}
+  @media (max-width: 650px) {
+    font-size: 2.75rem;
+  }
+`
+
+const SubTitle = styled(animated.h1)`
+  ${tw`text-3xl md:text-4xl font-light tracking-tight leading-tighter my-1`}
+`
+
+const Hero = () => {
+  const titleProps = useSpring({
+    config: config.slow,
+    from: { opacity: 0, transform: 'translate3d(0, -30px, 0)' },
+    to: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
+  })
+  const infoProps = useSpring({ 
+    config: config.slow,
+    delay: 500,
+    from: { opacity: 0, transform: 'translate3d(0, 30px, 0)' },
+    to: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
+  })
+  return (
+    <Wrapper>
+      <PageTitle style={titleProps}>
+        Brett Stevenson<span>.</span>
+      </PageTitle>
+      <SubTitle style={infoProps}>Software Developer <span>+</span> Designer</SubTitle>
+    </Wrapper>
+  )
+}
 
 export default Hero

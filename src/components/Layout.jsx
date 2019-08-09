@@ -30,7 +30,7 @@ const Layout = ({ children, pathname, customSEO }) => (
     <>
       {!customSEO && <SEO pathname={pathname} />}
       <GlobalStyle />
-      <Navigation />
+      <Navigation path={pathname} />
       {children}
       <Footer />
     </>

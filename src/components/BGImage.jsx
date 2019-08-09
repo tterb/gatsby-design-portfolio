@@ -8,10 +8,11 @@ const shade = `rgba(255, 255, 255, 0.4)`
 // the single/project templates have different headers
 
 const BGImage = styled.div`
-  ${tw`w-full`}
+  ${tw`w-full h-full`}
   .gatsby-image-wrapper {
     position: static !important;
     filter: grayscale(100%);
+    min-height: 100%;
     > div {
       padding-bottom: ${props => (props.single ? '35vw' : '40vw')} !important;
       @media (max-width: ${props => props.theme.breakpoints.m}),

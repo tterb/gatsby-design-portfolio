@@ -24,21 +24,21 @@ const Line = styled.span`
 
 const SectionTitle = styled.h2`
   ${tw`leading-none mt-4 ml-0 mb-4`}
-  color: ${theme.colors.body_color};
+  color: rgba(0,0,0,0.85);
   margin-left: 0 !important;
-  @media screen and (min-width: 420px) {
-    font-size: 1.65rem;
+  @media screen and (min-width: 500px) {
+    font-size: 2rem;
   }
 `
 
 const SubTitle = styled.p`
   ${tw`font-sans font-normal align-left xs:w-9/10 md:w-4/5 mt-3 ml-1 mb-5`}
-  color: ${theme.colors.body_color};
+  color: color: rgba(0,0,0,0.85);
 `
 
 const TextSection = styled.div`
-  ${tw`inline-block relative text-grey align-top align-left w-2/5 my-3 ml-4 mb-5`}
-  @media screen and (max-width: 420px) {
+  ${tw`inline-block relative text-grey align-top align-left w-2/5 my-3 mx-2 mb-5`}
+  @media screen and (max-width: 500px) {
     width: 45% !important;
   }
   h4 {
@@ -58,6 +58,8 @@ const TextSection = styled.div`
     ${tw`text-2xl xs:ml-0 md:ml-1`}
     color: ${theme.brand.primary};
     fill: ${theme.brand.primary};
+    min-width: 36px;
+    min-height: 36px;
     /* font-size: 1.5rem; */
   }
 `
