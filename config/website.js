@@ -5,14 +5,15 @@ module.exports = {
   siteHeadline: 'A showcase of my design work', // Headline for schema.org JSONLD
   siteTitleShort: 'Brett Stevenson', // short_name for manifest
   siteUrl: 'https://tterb-design.netlify.com', // Domain of your site. No trailing slash!
+  devUrl: 'https://tterb-gatsby.netlify.com',
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logo.png', // Used for SEO and manifest
   siteDescription: 'A place to showcase my designs',
   author: 'Brett Stevenson', // Author for schema.org JSONLD
   
-  github: 'tterb',
-  dribble: 'tterb',
-  deviantart: 'bstevenson',
+  github: 'https://www.github.com/tterb',
+  dribbble: 'https://www.dribbble.com/tterb',
+  deviantart: 'https://www.deviantart.com/bstevenson',
   
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@tterb', // Twitter Username
