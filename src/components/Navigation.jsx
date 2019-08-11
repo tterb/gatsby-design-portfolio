@@ -107,14 +107,16 @@ const Navigation = ({ path }) => (
         <Nav>
           {data.nav.edges.map((nav, index) => (
             <PageLink
-              key={nav.node.fields.slug}
+              key={index}
               to={nav.node.fields.slug}
               direction='down'
             >
               {nav.node.frontmatter.title}
             </PageLink>
           ))}
-          <a href={config.devUrl} className='external' target='_blank'>Code</a>
+          {config.navLinks.map(link => (
+            <a href={link.url} target='_blank'>{link.title}</a>
+          ))}
         </Nav>
         { path !== '/' ?
           <Name>

@@ -6,6 +6,7 @@ module.exports = {
   siteTitleShort: 'Brett Stevenson', // short_name for manifest
   siteUrl: 'https://tterb-design.netlify.com', // Domain of your site. No trailing slash!
   devUrl: 'https://tterb-gatsby.netlify.com',
+  blogUrl: 'https://tterb-gatsby.netlify.com/blog/',
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logo.png', // Used for SEO and manifest
   siteDescription: 'A place to showcase my designs',
@@ -20,6 +21,17 @@ module.exports = {
   ogSiteName: 'tterb', // Facebook Site Name
   ogLanguage: 'en_US',
   googleAnalyticsID: 'UA-47519312-3',
+  
+  navLinks: [
+    {
+      title: 'Code',
+      url: 'https://tterb-gatsby.netlify.com',
+    },
+    {
+      title: 'Blog',
+      url: 'https://tterb-gatsby.netlify.com/blog/',
+    },
+  ],
 
   // Manifest and Progress color
   themeColor: '#3498DB',
