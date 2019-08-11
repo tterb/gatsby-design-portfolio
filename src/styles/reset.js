@@ -79,7 +79,8 @@ const reset = css`
     color: ${theme.colors.body_color};
   }
   ::selection {
-    background-color: ${theme.colors.link_color};
+    /* background-color: ${`${theme.colors.link_color}70`}; */
+    background-color: rgba(70,100,150,0.35);
     color: ${theme.colors.white};
   }
   a {

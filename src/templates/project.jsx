@@ -7,27 +7,31 @@ import styled from 'styled-components'
 import { darken } from 'polished'
 import tw from 'tailwind.macro'
 import { animated, useSpring, config } from 'react-spring'
+// Components
 import { BGImage, Container, Layout, Lightbox, SEO } from '../components'
 import ProjectHero from '../components/ProjectHero'
 
 const Content = styled(Container)`
-  ${tw`absolute pin-l pin-r pin-b py-8 z-3`};
+  ${tw`absolute w-9/10 pin-l pin-r pin-b mx-auto py-8 z-3`};
+`
+
+const ContentBody = styled(Container)`
+  ${tw`w-9/10 mx-auto`};
 `
 
 const InfoWrapper = styled(animated.div)`
   ${tw`flex flex-row flex-wrap justify-start m-auto`};
-  width: 95%;
 `
 
 const Title = styled(animated.h1)`
-  ${tw`text-5xl my-0`};
+  ${tw`text-5xl md:text-6xl my-0`};
   @media screen and (max-width: 560px) {
-    font-size: 3rem;
+    font-size: 4.5rem;
   }
 `
 
 const InfoBlock = styled.div`
-  ${tw`flex flex-col mt-4 mr-8 mb-0 ml-0`};
+  ${tw`flex flex-col mt-4 mr-4 md:mr-8 mb-0 ml-0`};
   div:first-child {
     ${tw`text-sm font-bold uppercase mb-2`};
     color: ${props => (props.customcolor ? props.customcolor : props.theme.colors.grey)};
@@ -40,7 +44,6 @@ const InfoBlock = styled.div`
 
 const ProjectBody = styled(animated.div)`
   ${tw`m-auto`}
-  width: 95%;
   a {
     ${tw`no-underline`}
     color: ${props => (props.customcolor ? props.customcolor : props.theme.colors.primary)};
@@ -93,7 +96,7 @@ const Project = ({ data: { mdx: postNode }, location }) => {
           </InfoWrapper>
         </Content>
       </ProjectHero>
-      <Container type="text" className="project-content">
+      <ContentBody type="text" className="project-content">
         <ProjectBody style={contentProps} customcolor={project.color}>
           <MDXRenderer>{postNode.code.body}</MDXRenderer>
           {project.image ?
@@ -101,7 +104,7 @@ const Project = ({ data: { mdx: postNode }, location }) => {
             <Image fluid={project.cover.childImageSharp.fluid} alt={project.title} />
           }
         </ProjectBody>
-      </Container>
+      </ContentBody>
     </Layout>
   )
 }

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
 const Wrapper = styled.div`
-  ${tw`flex flex-col w-full tracking-tight justify-end self-start shadow-down -mt-14 px-9 py-16 z-999`}
+  ${tw`flex flex-col w-full tracking-tight justify-end self-start shadow-down -mt-14 mx-auto px-9 py-16 z-999`}
   height: 55vh;
   @media (max-width: 500px) {
     height: 50vh;

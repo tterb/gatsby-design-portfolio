@@ -4,13 +4,20 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import { useTrail } from 'react-spring'
 import styled from 'styled-components'
+import tw from 'tailwind.macro'
+// Components
 import { Hero, Layout, ProjectItem } from '../components'
 
+const Wrapper = styled.div`
+  ${tw`relative w-full h-auto pin-t my-0 mx-auto`}
+  z-index: -999;
+`
+
 const ListWrapper = styled.div`
+  ${tw`w-full`}
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   background: #F6F8FA;
-  width: 100%;
 `
 
 const Index = ({
@@ -27,16 +34,18 @@ const Index = ({
   return (
     <Layout pathname={location.pathname}>
     <Hero />
-      <ListWrapper>
-        {trail.map((style, index) => (
-          <ProjectItem
-            testid={`projectItem-${index}`}
-            style={style}
-            key={projectEdges[index].node.fields.slug}
-            node={projectEdges[index].node}
-          />
-        ))}
-      </ListWrapper>
+      <Wrapper>
+        <ListWrapper>
+          {trail.map((style, index) => (
+            <ProjectItem
+              testid={`projectItem-${index}`}
+              style={style}
+              key={projectEdges[index].node.fields.slug}
+              node={projectEdges[index].node}
+            />
+          ))}
+        </ListWrapper>
+      </Wrapper>
     </Layout>
   )
 }
