@@ -795,8 +795,8 @@ module.exports = {
     md:     '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
     lg:     '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
     inner:  'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
-    down:   '0px 5px 15px 0px rgba(0,0,0,0.1)',
-    up:     '0px -4px 20px 0px rgba(0,0,0,0.065)',
+    down:   '0px 3px 8px -5px rgba(0,0,0,0.3)',
+    up:     '0 -4px 12px -5px rgba(0,0,0,0.25)',
     none:   'none',
   },
 
