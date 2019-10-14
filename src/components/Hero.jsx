@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 `
 
 const PageTitle = styled(animated.h1)`
-  ${tw`text-4xl md:text-5xl font-normal tracking-tighter leading-tighter mt-4 mb-2`}
+  ${tw`text-4xl md:text-5xl font-bold tracking-tighter leading-tighter mt-4 mb-2`}
   @media (max-width: 650px) {
     font-size: 2.75rem;
   }

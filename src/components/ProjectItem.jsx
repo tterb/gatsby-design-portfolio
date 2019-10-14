@@ -37,12 +37,11 @@ const Content = styled.div`
 `
 
 const Title = styled.h2`
-  ${tw`leading-tight mt-0 mb-2`};
+  ${tw`leading-tight mt-0 mb-3`};
   color: rgba(255,255,255,0.95);
+  font-size: 3rem;
+  line-height: 1;
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-  @media screen and (max-width: 560px) {
-    font-size: 3rem;
-  }
 `
 
 const ImageWrapper = styled.div`

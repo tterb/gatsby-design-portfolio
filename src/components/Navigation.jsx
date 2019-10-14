@@ -24,7 +24,7 @@ const Wrapper = styled.header`
 `
 
 const Nav = styled.nav`
-  ${tw`flex flex-1 justify-start font-title`};
+  ${tw`flex flex-1 justify-start font-title text-lg`};
   transition: all 350ms ease-in-out;
   padding: 0 ${props => props.theme.spacer.horizontal};
   a:not(:first-child) {
