@@ -33,7 +33,7 @@
     "@mdx-js/react": "^1.0.15",
     "@reach/dialog": "^0.2.8",
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.3.32",
+    "gatsby": "^2.13.0",
     "gatsby-cli": "^2.5.13",
     "gatsby-image": "^2.0.41",
     "gatsby-mdx": "^0.6.2",
@@ -66,9 +66,7 @@
     "styled-icons": "^7.14.0",
     "styled-theming": "^2.2.0",
     "tailwind.macro": "^0.5.10",
-    "tailwindcss": "^0.7.3",
-    "typeface-poppins": "^0.0.72",
-    "typeface-roboto": "^0.0.54"
+    "tailwindcss": "^0.7.3"
   },
   "keywords": [
     "gatsby",
