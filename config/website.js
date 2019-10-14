@@ -5,8 +5,8 @@ module.exports = {
   siteHeadline: 'A showcase of my design work', // Headline for schema.org JSONLD
   siteTitleShort: 'Brett Stevenson', // short_name for manifest
   siteUrl: 'https://tterb-design.netlify.com', // Domain of your site. No trailing slash!
-  devUrl: 'https://tterb-gatsby.netlify.com',
-  blogUrl: 'https://tterb-gatsby.netlify.com/blog/',
+  devUrl: 'https://brettstevenson.io',
+  blogUrl: 'https://brettstevenson.io/blog/',
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logo.png', // Used for SEO and manifest
   siteDescription: 'A place to showcase my designs',
@@ -25,11 +25,11 @@ module.exports = {
   navLinks: [
     {
       title: 'Code',
-      url: 'https://tterb-gatsby.netlify.com',
+      url: 'https://brettstevenson.io',
     },
     {
       title: 'Blog',
-      url: 'https://tterb-gatsby.netlify.com/blog/',
+      url: 'https://brettstevenson.io/blog/',
     },
   ],
 
