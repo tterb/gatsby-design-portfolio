@@ -114,8 +114,8 @@ const Navigation = ({ path }) => (
               {nav.node.frontmatter.title}
             </PageLink>
           ))}
-          {config.navLinks.map(link => (
-            <a href={link.url} target='_blank'>{link.title}</a>
+          {config.navLinks.map((link, i) => (
+            <a href={link.url} key={i} target='_blank'>{link.title}</a>
           ))}
         </Nav>
         { path !== '/' ?
