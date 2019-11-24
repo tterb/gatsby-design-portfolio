@@ -39,7 +39,7 @@ const Content = styled.div`
 const Title = styled.h2`
   ${tw`leading-tight mt-0 mb-3`};
   color: rgba(255,255,255,0.95);
-  font-size: 3rem;
+  font-size: 2.65rem;
   line-height: 1;
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 `
